@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "main/index.js",
   "icon": "build/icon.png",
-  "description": "Create and manage virtual screens on Windows effortlessly",
+  "description": "To view saved WiFi network passwords in Windows",
   "private": false,
   "license": "MIT",
   "author": {
@@ -28,7 +28,7 @@
     "publish": "npx electron-builder --win -p always",
     "publish-linux": "npx electron-builder --linux -p always",
     "postinstall": "npx electron-builder install-app-deps",
-    "release": "npx electron-builder --win --x64"
+    "release": "npx electron-builder"
   },
   "dependencies": {
     "electron-is-dev": "^2.0.0",
