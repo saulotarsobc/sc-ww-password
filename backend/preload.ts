@@ -5,14 +5,13 @@ import { ipcRenderer } from "electron";
 declare global {
   namespace NodeJS {
     interface Global {
-      API: any;
+      api: any;
     }
   }
 }
 
 process.once("loaded", () => {
   (global as any).api = {
-    ipcRenderer,
     runCommand: (command: {}) => ipcRenderer.sendSync("runCommand", command),
   };
 });

@@ -8,7 +8,7 @@ import prepareNext from "electron-next";
 
 // Modules
 import { BrowserWindow, app, ipcMain, IpcMainEvent } from "electron";
-import { getWinSettings, setWinSettings } from "./store";
+// import { getWinSettings, setWinSettings } from "./store";
 import { readFileSync, readdir } from "fs";
 // import { xml2json } from "xml-js";
 const xml2json = require("xml2json");
@@ -31,17 +31,17 @@ const URL =
       });
 
 const createWindow = () => {
-  const winSize = getWinSettings();
+  // const winSize = getWinSettings();
 
   const mainWindow = new BrowserWindow({
-    height: winSize.h,
-    width: winSize.w,
-    // minHeight: 500,
-    // minWidth: 400,
+    // height: winSize.h,
+    // width: winSize.w,
+    // minHeight: 600,
+    // minWidth: 710,
 
-    // height: 500,
-    // width: 400,
-    // resizable: false,
+    height: 600,
+    width: 710,
+    resizable: false,
 
     webPreferences: {
       spellcheck: false,
@@ -51,9 +51,9 @@ const createWindow = () => {
     },
   });
 
-  mainWindow.on("resize", () => {
-    setWinSettings(mainWindow.getSize());
-  });
+  // mainWindow.on("resize", () => {
+  //   setWinSettings(mainWindow.getSize());
+  // });
 
   mainWindow.setMenu(null);
 
