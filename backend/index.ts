@@ -8,10 +8,10 @@ import prepareNext from "electron-next";
 
 // Modules
 import { BrowserWindow, app, ipcMain, IpcMainEvent } from "electron";
-// import { getWinSettings, setWinSettings } from "./store";
 import { readFileSync, readdir } from "fs";
-// import { xml2json } from "xml-js";
-const xml2json = require("xml2json");
+import xml2json from "xml2json";
+
+// import { getWinSettings, setWinSettings } from "./store";
 
 const isDev = process.argv.some((str) => str == "--dev");
 const isStart = process.argv.some((str) => str == "--start");

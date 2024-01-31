@@ -52,8 +52,8 @@ export default function Index() {
           </thead>
 
           <tbody>
-            {tdata.map(({ WLANProfile: profile }) => (
-              <tr>
+            {tdata.map(({ WLANProfile: profile }, index) => (
+              <tr key={index}>
                 <td className="border border-slate-600 font-bold">
                   {profile.SSIDConfig.SSID.name}
                 </td>

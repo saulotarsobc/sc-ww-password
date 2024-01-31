@@ -1,6 +1,6 @@
 {
   "name": "sc-ww-password",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "main/index.js",
   "icon": "build/icon.png",
   "description": "To view saved WiFi network passwords in Windows",
@@ -15,20 +15,20 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "dev": "npm run build-backend && npx electron . --dev",
-    "start": "npm run build && npx electron . --start",
+    "dev": "npm run build-backend && electron . --dev",
+    "start": "npm run build && electron . --start",
     "clear:install": "rimraf node_modules package-lock.json && npm run cache clean && npm run install",
     "clean": "rimraf dist main frontend/out frontend/.next",
     "build-frontend": "next build frontend",
     "build-backend": "tsc -p backend",
     "build": "npm run clean && npm run build-frontend && npm run build-backend",
-    "pack-app": "npm run build-frontend && npm run build-backend && npm run build && npx electron-builder --dir",
-    "dist": "npm run build && npx electron-builder",
+    "pack-app": "npm run build-frontend && npm run build-backend && npm run build && electron-builder --dir",
+    "dist": "npm run build && electron-builder",
     "type-check": "tsc -p ./frontend/tsconfig.json && tsc -p ./backend/tsconfig.json",
-    "publish": "npx electron-builder --win -p always",
-    "publish-linux": "npx electron-builder --linux -p always",
-    "postinstall": "npx electron-builder install-app-deps",
-    "release": "npx electron-builder"
+    "publish": "electron-builder --win -p always",
+    "publish-linux": "electron-builder --linux -p always",
+    "postinstall": "electron-builder install-app-deps",
+    "release": "electron-builder"
   },
   "dependencies": {
     "electron-is-dev": "^2.0.0",
@@ -43,6 +43,7 @@
     "@types/node": "^20.11.5",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
+    "@types/xml2json": "^0.11.6",
     "autoprefixer": "^10.4.16",
     "electron": "^26.6.7",
     "electron-builder": "^24.9.1",
