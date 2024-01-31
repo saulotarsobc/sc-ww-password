@@ -1,14 +1,14 @@
-# SC - Virtual Screens
+# SC - WW Password
 
-## Create and manage virtual screens on Windows effortlessly. This Electron application provides an intuitive interface for organizing your workspace. Easily switch between screens for a more efficient experience. Ideal for users seeking simplicity in managing virtual spaces.
+## To view saved WiFi network passwords in Windows
 
-![Alt text](images/image.png)
+![Alt text](image.png)
 
 ## Use
 
 ```sh
-git clone https://github.com/saulotarsobc/sc-virtual-screens.git;
-cd sc-virtual-screens;
+git clone https://github.com/saulotarsobc/sc-ww-password.git;
+cd sc-ww-password;
 npm install;
 npm run dev;
 ```
@@ -28,4 +28,3 @@ npm run dev;
 - **postinstall:** Executes the `electron-builder install-app-deps` command after dependency installation to ensure correct application dependencies.
 - **release:** Initiates the process of creating a release package for the application using Electron Builder.
 - **libs-update:** Updates project dependencies using `ncu` (npm-check-updates) and then reinstalls dependencies using `npm install`.
-# sc-ww-password
