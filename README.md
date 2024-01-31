@@ -2,7 +2,7 @@
 
 ## To view saved WiFi network passwords in Windows
 
-![Alt text](image.png)
+![Alt text](./images/image.png)
 
 ## Use
 

@@ -54,14 +54,20 @@
   },
   "build": {
     "productName": "SC - WW Password",
-    "appId": "sc-ww-password",
+    "appId": "com.sc.ww.password",
     "win": {
       "publish": [
         "github"
       ],
       "publisherName": "Saulo INC",
       "target": [
-        "nsis"
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
       ]
     },
     "nsis": {
