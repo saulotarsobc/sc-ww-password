@@ -1,0 +1,83 @@
+{
+  "name": "sc-ww-password",
+  "version": "1.0.0",
+  "main": "main/index.js",
+  "icon": "build/icon.png",
+  "description": "Create and manage virtual screens on Windows effortlessly",
+  "private": false,
+  "license": "MIT",
+  "author": {
+    "name": "Saulo Costa",
+    "email": "saulotarsobc@gmail.com",
+    "url": "https://github.com/saulotarsobc/sc-ww-password"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "dev": "npm run build-backend && npx electron . --dev",
+    "start": "npm run build && npx electron . --start",
+    "clear:install": "rimraf node_modules package-lock.json && npm run cache clean && npm run install",
+    "clean": "rimraf dist main frontend/out frontend/.next",
+    "build-frontend": "next build frontend",
+    "build-backend": "tsc -p backend",
+    "build": "npm run clean && npm run build-frontend && npm run build-backend",
+    "pack-app": "npm run build-frontend && npm run build-backend && npm run build && npx electron-builder --dir",
+    "dist": "npm run build && npx electron-builder",
+    "type-check": "tsc -p ./frontend/tsconfig.json && tsc -p ./backend/tsconfig.json",
+    "publish": "npx electron-builder --win -p always",
+    "publish-linux": "npx electron-builder --linux -p always",
+    "postinstall": "npx electron-builder install-app-deps",
+    "release": "npx electron-builder --win --x64"
+  },
+  "dependencies": {
+    "electron-is-dev": "^2.0.0",
+    "electron-next": "^3.1.5",
+    "electron-store": "^8.1.0",
+    "esbuild": "^0.19.11",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "xml2json": "^0.12.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "autoprefixer": "^10.4.16",
+    "electron": "^26.6.7",
+    "electron-builder": "^24.9.1",
+    "next": "^14.0.4",
+    "postcss": "^8.4.33",
+    "rimraf": "^5.0.5",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3"
+  },
+  "build": {
+    "productName": "SC - WW Password",
+    "appId": "sc-ww-password",
+    "win": {
+      "publish": [
+        "github"
+      ],
+      "publisherName": "Saulo INC",
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "asar": true,
+    "files": [
+      "main",
+      "frontend/out"
+    ],
+    "extraResources": [
+      {
+        "from": "profiles",
+        "to": "profiles"
+      }
+    ]
+  }
+}
